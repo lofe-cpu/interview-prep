@@ -114,7 +114,7 @@ export default function AuthForm({ mode }: { mode: "login" | "register" }) {
           <button
             type="submit"
             disabled={busy}
-            className="w-full rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-700 disabled:opacity-60 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+            className="btn btn-primary w-full px-4 py-2.5 text-sm disabled:opacity-60"
           >
             {busy ? "Подождите…" : isRegister ? "Создать аккаунт" : "Войти"}
           </button>

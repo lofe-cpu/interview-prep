@@ -18,9 +18,9 @@ export default function TopicCard({
   return (
     <Link
       href={`/practice?topic=${slug}`}
-      className="group block rounded-xl border border-slate-200 bg-white p-5 transition hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-slate-700"
+      className="group card-hover block rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"
     >
-      <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-600 dark:border-slate-700 dark:text-slate-300">
+      <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-600 transition-all duration-300 group-hover:border-transparent group-hover:bg-gradient-to-br group-hover:from-indigo-500 group-hover:to-violet-500 group-hover:text-white dark:border-slate-700 dark:text-slate-300">
         <Icon name={t.icon} className="h-5 w-5" />
       </div>
 
@@ -41,7 +41,7 @@ export default function TopicCard({
           </div>
           <div className="h-1 w-full overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
             <div
-              className="h-full rounded-full bg-indigo-600 transition-all dark:bg-indigo-500"
+              className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-violet-500 transition-all duration-700"
               style={{ width: `${pct}%` }}
             />
           </div>

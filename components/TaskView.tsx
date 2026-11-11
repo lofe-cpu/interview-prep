@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
+import confetti from "canvas-confetti";
 import type { Task } from "@/data/tasks";
 import type { Topic } from "@/data/topics";
 import DifficultyBadge from "@/components/DifficultyBadge";
@@ -90,6 +91,11 @@ export default function TaskView({
         body: JSON.stringify({ rating: value }),
       });
       setRating(value);
+      if (value === "solved") {
+        confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+      } else if (value === "with_material") {
+        confetti({ particleCount: 50, spread: 60, origin: { y: 0.6 } });
+      }
     } catch {
       setError("Не удалось сохранить оценку");
     } finally {
@@ -248,14 +254,14 @@ export default function TaskView({
             <button
               onClick={() => submit(false)}
               disabled={phase === "submitting"}
-              className="rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-700 disabled:opacity-60 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+              className="btn btn-primary px-5 py-2.5 text-sm disabled:opacity-60"
             >
               {phase === "submitting" ? "Сохраняю…" : "Отправить решение"}
             </button>
             <button
               onClick={() => submit(true)}
               disabled={phase === "submitting"}
-              className="rounded-lg border border-slate-200 px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 disabled:opacity-60 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+              className="btn btn-secondary px-4 py-2.5 text-sm disabled:opacity-60"
             >
               Не знаю — показать разбор
             </button>
@@ -309,7 +315,7 @@ function RevealSection({
   nextTitle: string | null;
 }) {
   return (
-    <div className="mt-4 space-y-4">
+    <div className="animate-fade-up mt-4 space-y-4">
       {/* Твой ответ */}
       <div className="rounded-xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
         <button
@@ -380,7 +386,7 @@ function RevealSection({
               disabled={ratingSaving}
               className={`inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-medium transition disabled:opacity-60 ${
                 rating === r
-                  ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900"
+                  ? "bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-500/30"
                   : "border border-slate-200 bg-white text-slate-700 hover:border-slate-300 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-slate-600"
               }`}
             >
@@ -401,14 +407,14 @@ function RevealSection({
         {nextTitle && (
           <button
             onClick={onNext}
-            className="rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+            className="btn btn-primary px-5 py-2.5 text-sm"
           >
             Следующая задача →
           </button>
         )}
         <Link
           href={`/practice?topic=${task.topic}`}
-          className="rounded-lg border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
+          className="btn btn-secondary px-5 py-2.5 text-sm"
         >
           К списку задач
         </Link>

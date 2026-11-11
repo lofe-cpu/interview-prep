@@ -15,7 +15,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/practice"
-        className="mt-6 inline-block rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+        className="btn btn-primary mt-6 px-5 py-2.5 text-sm"
       >
         ← К задачам
       </Link>
