@@ -52,6 +52,12 @@ export default async function HomePage() {
       {/* Hero */}
       <section className="py-10 sm:py-14">
         <Reveal>
+          <div className="mb-6 flex justify-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3.5 py-1 text-xs font-medium text-slate-600 backdrop-blur dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-indigo-500" />
+              24 задачи · 6 тем · прогресс сохраняется
+            </span>
+          </div>
           <h1 className="mx-auto max-w-3xl text-center text-4xl font-extrabold tracking-tight sm:text-5xl">
             Тренажёр{" "}
             <span className="gradient-text">технических собеседований</span>
@@ -95,7 +101,7 @@ export default async function HomePage() {
         {user && (
           <Reveal delay={360}>
             <div className="mx-auto mt-10 grid max-w-2xl grid-cols-3 gap-3">
-              <div className="card-hover rounded-2xl border border-slate-200 bg-white/70 p-4 text-center backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
+              <div className="card-hover rounded-xl border border-slate-200 bg-white/70 p-4 text-center backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
                 <div className="flex items-center justify-center gap-1.5 text-2xl font-bold">
                   <Icon name="flame" className="h-5 w-5 text-orange-500" />
                   <CountUp to={streak.current} />
@@ -104,7 +110,7 @@ export default async function HomePage() {
                   дней подряд
                 </div>
               </div>
-              <div className="card-hover rounded-2xl border border-slate-200 bg-white/70 p-4 text-center backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
+              <div className="card-hover rounded-xl border border-slate-200 bg-white/70 p-4 text-center backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
                 <div className="text-2xl font-bold">
                   <CountUp to={overall.solved} />
                   <span className="text-base font-medium text-slate-400 dark:text-slate-500">
@@ -115,7 +121,7 @@ export default async function HomePage() {
                   задач решено
                 </div>
               </div>
-              <div className="card-hover rounded-2xl border border-slate-200 bg-white/70 p-4 text-center backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
+              <div className="card-hover rounded-xl border border-slate-200 bg-white/70 p-4 text-center backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
                 <div className="flex items-center justify-center gap-1.5 text-2xl font-bold">
                   <Icon name="trophy" className="h-5 w-5 text-amber-500" />
                   <CountUp to={streak.longest} />
@@ -157,7 +163,7 @@ export default async function HomePage() {
             <h2 className="text-xl font-bold tracking-tight">Последние попытки</h2>
           </Reveal>
           <Reveal delay={120}>
-            <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-white/70 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
+            <div className="mt-4 overflow-hidden rounded-xl border border-slate-200 bg-white/70 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
               <ul className="divide-y divide-slate-100 dark:divide-slate-800">
                 {recent.map((a) => (
                   <li key={a.id}>

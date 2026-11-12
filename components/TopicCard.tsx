@@ -18,7 +18,7 @@ export default function TopicCard({
   return (
     <Link
       href={`/practice?topic=${slug}`}
-      className="group card-hover block rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"
+      className="group card-hover block rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"
     >
       <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-600 transition-all duration-300 group-hover:border-transparent group-hover:bg-gradient-to-br group-hover:from-indigo-500 group-hover:to-violet-500 group-hover:text-white dark:border-slate-700 dark:text-slate-300">
         <Icon name={t.icon} className="h-5 w-5" />

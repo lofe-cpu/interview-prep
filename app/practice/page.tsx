@@ -114,7 +114,7 @@ function TopicTaskList({
       </Reveal>
 
       <Reveal delay={120}>
-        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white/70 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
+        <div className="overflow-hidden rounded-xl border border-slate-200 bg-white/70 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
           <ul className="divide-y divide-slate-100 dark:divide-slate-800">
             {tasks.map((t) => {
               const isSolved = solvedIds.has(t.id);

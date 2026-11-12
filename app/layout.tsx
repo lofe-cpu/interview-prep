@@ -50,6 +50,9 @@ export default async function RootLayout({
           <div className="blob bottom-0 left-1/3 h-[28rem] w-[28rem] bg-sky-300/30 [animation-delay:12s] dark:bg-sky-600/10" />
         </div>
 
+        {/* Зернистость «бумаги» */}
+        <div aria-hidden className="grain" />
+
         <Nav
           user={
             user ? { id: user.id, name: user.name, email: user.email } : null

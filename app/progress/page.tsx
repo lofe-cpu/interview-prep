@@ -75,7 +75,7 @@ export default async function ProgressPage() {
 
       {/* Общий прогресс-бар */}
       <Reveal delay={120}>
-        <div className="mt-6 rounded-2xl border border-slate-200 bg-white/70 p-5 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
+        <div className="mt-6 rounded-xl border border-slate-200 bg-white/70 p-5 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
           <div className="mb-2 flex items-center justify-between text-sm">
             <span className="font-semibold">Общий прогресс</span>
             <span className="text-slate-500 dark:text-slate-400">
@@ -88,7 +88,7 @@ export default async function ProgressPage() {
 
       {/* По темам */}
       <Reveal delay={160}>
-        <div className="mt-4 rounded-2xl border border-slate-200 bg-white/70 p-5 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
+        <div className="mt-4 rounded-xl border border-slate-200 bg-white/70 p-5 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
           <h2 className="mb-4 font-semibold">По темам</h2>
           <div className="space-y-4">
             {TOPICS.map((t) => {
@@ -120,7 +120,7 @@ export default async function ProgressPage() {
 
       {/* История попыток */}
       <Reveal delay={200}>
-        <div className="mt-4 rounded-2xl border border-slate-200 bg-white/70 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
+        <div className="mt-4 rounded-xl border border-slate-200 bg-white/70 backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
           <h2 className="border-b border-slate-100 px-5 py-4 font-semibold dark:border-slate-800">
             История попыток
           </h2>
@@ -185,7 +185,7 @@ function StatCard({
   suffix?: string;
 }) {
   return (
-    <div className="card-hover rounded-2xl border border-slate-200 bg-white/70 p-4 text-center backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
+    <div className="card-hover rounded-xl border border-slate-200 bg-white/70 p-4 text-center backdrop-blur dark:border-slate-800 dark:bg-slate-900/70">
       <div className="flex items-center justify-center gap-1.5 text-2xl font-bold">
         {icon && <Icon name={icon} className={`h-5 w-5 ${iconClass ?? ""}`} />}
         {value}
